@@ -17,17 +17,15 @@ import static com.codeborne.selenide.Selenide.open;
 public class CardDeliveryTest {
 
     @BeforeEach
-    void setup() {
-        open("http://localhost:9999");
-    }
+    void setup() { open("http://localhost:9999"); }
 
     @Test
     @DisplayName("Should successful plan meeting")
     void shouldSuccessfulPlanMeeting() {
         DataGenerator.UserInfo validUser = DataGenerator.Registration.generateUser("ru");
-        int daysToAddForFirstMeeting = 5;
+        int daysToAddForFirstMeeting = 6;
         String firstMeetingDate = DataGenerator.generateDate(daysToAddForFirstMeeting);
-        int daysToAddForSecondMeeting = 8;
+        int daysToAddForSecondMeeting = 9;
         String secondMeetingDate = DataGenerator.generateDate(daysToAddForSecondMeeting);
         $("[data-test-id=city] input").setValue(validUser.getCity());
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
