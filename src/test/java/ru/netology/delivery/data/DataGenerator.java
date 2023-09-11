@@ -34,6 +34,9 @@ public class DataGenerator {
         return faker.phoneNumber().phoneNumber();
     }
 
+    public static String generateDate(int daysToAddForFirstMeeting) {
+    }
+
     public static class Registration {
         private Registration() {
         }
